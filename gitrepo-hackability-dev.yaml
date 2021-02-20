@@ -1,0 +1,14 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: hackability-dev
+  namespace: flux-system
+spec:
+  gitImplementation: go-git
+  interval: 0m30s
+  ref:
+    branch: main
+  secretRef:
+    name: hackability-dev
+  timeout: 20s
+  url: ssh://git@github.com/hackability-dev/env-space-hackabilty-dev

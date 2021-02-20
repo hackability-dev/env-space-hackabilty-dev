@@ -6,4 +6,4 @@ metadata:
   namespace: flux-system
 spec:
   image: hackabilitydev/space-hackability
-  interval: 1m0s
+  interval: 0m30s
