@@ -17,16 +17,16 @@ spec:
         app: hackability
     spec:
       containers:
-        - image: hackabilitydev/space-hackability # {"$imagepolicy": "flux-system:space-hackability"}
-          name: space-hackability
-          envFrom:
-            - secretRef:
-                name: db-access
-          ports:
-            - containerPort: 3000
-              name: http
-              protocol: TCP
-          resources:
-            limits:
-              cpu: 200m
-              memory: 128Mi
+      - image: hackabilitydev/space-hackability:0.1.0 # {"$imagepolicy": "flux-system:space-hackability"}
+        name: space-hackability
+        envFrom:
+        - secretRef:
+            name: db-access
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 200m
+            memory: 128Mi
