@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: hackability
+  name: hackability
+  namespace: hackability-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hackability
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: hackability
+    spec:
+      containers:
+        - image: hackabilitydev/space-hackability:v2
+          name: space-hackability
+          envFrom:
+            - secretRef:
+                name: db-access
+          ports:
+            - containerPort: 3000
+              name: http
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 200m
+              memory: 128Mi
