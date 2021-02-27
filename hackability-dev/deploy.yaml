@@ -17,7 +17,7 @@ spec:
         app: hackability
     spec:
       containers:
-      - image: hackabilitydev/space-hackability:0.1.1 # {"$imagepolicy": "flux-system:space-hackability"}
+      - image: hackabilitydev/space-hackability:0.1.2 # {"$imagepolicy": "flux-system:space-hackability"}
         name: space-hackability
         envFrom:
         - secretRef:
