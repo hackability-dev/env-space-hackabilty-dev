@@ -2,6 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: migrator-20210320141600
+  namespace: hackability-dev
 spec:
   template:
     spec:
