@@ -19,12 +19,13 @@ spec:
       repository: ghcr.io/hackability-dev/space-hackability/app
       tag: 'main-998f4f9-1616855732' # {"$imagepolicy": "flux-system:space-hackability:tag"}
     ingress:
+      enabled: true
       annotations:
         kubernetes.io/ingress.class: 'traefik'
         cert-manager.io/cluster-issuer: 'letsencrypt-prod'
         traefik.ingress.kubernetes.io/redirect-entry-point: https
       hosts:
-        - host: space.k8s.hackability.dev
+        - host: space-test.k8s.hackability.dev
           http:
             paths:
               - path: '/'
@@ -33,8 +34,8 @@ spec:
                   service:
                     name: hackability
                     port:
-                      number: 3000
+                      number: 80
       tls:
         - hosts:
-            - space.k8s.hackability.dev
-          secretName: space.k8s.hackability.dev-tls
+            - space-test.k8s.hackability.dev
+          secretName: space-test.k8s.hackability.dev-tls
