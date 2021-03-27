@@ -17,21 +17,21 @@ spec:
         app: hackability
     spec:
       containers:
-        - image: ghcr.io/hackability-dev/space-hackability/app:main-998f4f9-1616855732 # {"$imagepolicy": "flux-system:space-hackability"}
-          name: space-hackability
-          env:
-            - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: db-postgresql
-                  key: postgresql-password
-            - name: DATABASE_URL
-              value: postgresql://postgres:$(POSTGRES_PASSWORD)@db-postgresql:5432/hackability_space?sslmode=disable
-          ports:
-            - containerPort: 3000
-              name: http
-              protocol: TCP
-          resources:
-            limits:
-              cpu: 200m
-              memory: 128Mi
+      - image: ghcr.io/hackability-dev/space-hackability/app:main-998f4f9-1616855732 # {"$imagepolicy": "flux-system:space-hackability"}
+        name: space-hackability
+        env:
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-postgresql
+              key: postgresql-password
+        - name: DATABASE_URL
+          value: postgresql://postgres:$(POSTGRES_PASSWORD)@db-postgresql:5432/hackability_space?sslmode=disable
+        ports:
+        - containerPort: 3000
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 200m
+            memory: 128Mi
