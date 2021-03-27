@@ -7,7 +7,11 @@ metadata:
 spec:
   imageRepositoryRef:
     name: space-hackability
+  filterTags:
+    pattern: '^main-[a-fA-F0-9]+-(?P<ts>.*)'
+    extract: '$ts'
   policy:
-    semver:
-      range: '>=0.0.0'
-
+    numerical:
+      order: asc
+    # semver:
+    #   range: '>=0.0.0'

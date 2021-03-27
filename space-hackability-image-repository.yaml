@@ -5,5 +5,5 @@ metadata:
   name: space-hackability
   namespace: flux-system
 spec:
-  image: hackabilitydev/space-hackability
+  image: ghcr.io/hackability-dev/space-hackability/app
   interval: 0m30s
