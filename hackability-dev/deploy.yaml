@@ -17,7 +17,7 @@ spec:
         app: hackability
     spec:
       containers:
-      - image: ghcr.io/hackability-dev/space-hackability/app:main-19b644a-1616860295 # {"$imagepolicy": "flux-system:space-hackability"}
+      - image: ghcr.io/hackability-dev/space-hackability/app:main-cdd5b54-1616860624 # {"$imagepolicy": "flux-system:space-hackability"}
         name: space-hackability
         env:
         - name: POSTGRES_PASSWORD
