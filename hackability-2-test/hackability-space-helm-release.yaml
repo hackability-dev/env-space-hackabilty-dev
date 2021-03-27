@@ -24,17 +24,17 @@ spec:
         cert-manager.io/cluster-issuer: 'letsencrypt-prod'
         traefik.ingress.kubernetes.io/redirect-entry-point: https
       hosts:
-        - host: space.k8s.hackability.dev
-          http:
-            paths:
-              - path: '/'
-                pathType: Prefix
-                backend:
-                  service:
-                    name: hackability
-                    port:
-                      number: 3000
+      - host: space.k8s.hackability.dev
+        http:
+          paths:
+          - path: '/'
+            pathType: Prefix
+            backend:
+              service:
+                name: hackability
+                port:
+                  number: 3000
       tls:
-        - hosts:
-            - space.k8s.hackability.dev
-          secretName: space.k8s.hackability.dev-tls
+      - hosts:
+        - space.k8s.hackability.dev
+        secretName: space.k8s.hackability.dev-tls
